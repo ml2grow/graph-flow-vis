@@ -1,0 +1,15 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <title>flowpipe graphvis</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+    <div class="graphs">
+      {% for graph_name in all_graph_names%}
+       {{sorted_modified_dates[loop.index - 1]}} <a href="/graph/{{graph_name}}">{{graph_name}}</a></br>
+      {% endfor %}
+    </div>
+</body>

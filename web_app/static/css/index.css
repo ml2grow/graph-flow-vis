@@ -1,0 +1,11 @@
+.graphs {
+    display: inline-block;
+    text-align: left;
+}
+.graphs a {
+    padding-left: 1em;
+}
+body {
+    text-align: center;
+    background-color: #e3e3e3;
+}

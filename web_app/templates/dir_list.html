@@ -1,0 +1,16 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <title>dir list</title>
+</head>
+
+<body>
+
+  {% for full_path, rest_path in dir_dict.items() %}
+      <a href="{{ full_path }}">{{ rest_path }}</a><br>
+  {% endfor %}
+
+<svg width=1600 height=1700><g/></svg>
+
+</body>
