@@ -89,5 +89,3 @@ Markdown tables are automatically rendered with custom css to make them easier o
 
 All contributions such as bugs, feature requests, additional examples or code improvements are welcome.
 You are free to create an issue or pull request as long as you adhere to our [code of conduct](code-of-conduct.md).
-
-
