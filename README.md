@@ -1,12 +1,8 @@
-# graph-flow-vis *WIP*
+# graph-flow-vis (WIP)
 
 Web applicaton to visualize complex pipelines, made with [dagre-d3](https://github.com/dagrejs/dagre-d3).
 The core focus is to visualize [flowpipe](https://github.com/PaulSchweizer/flowpipe) graphs although we
 aspire to support more graph import formats in the future.
-
-## demo
-
-Try the [demo](TODO) here.
 
 ![example graph](example_graph_vis1.png)
 
