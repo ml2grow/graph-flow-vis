@@ -1,0 +1,143 @@
+{
+    "graph": {
+        "name": "predictGraph",
+        "nodes": [
+            {
+                "id": "predictGraph_QueryTrainData"
+            },
+            {
+                "id": "predictGraph_QueryUnlabeledData"
+            },
+            {
+                "id": "predictGraph_SubsetFeats"
+            },
+            {
+                "id": "predictGraph_DropLabel"
+            },
+            {
+                "id": "predictGraph_SubFeatsNew"
+            },
+            {
+                "id": "predictGraph_MergeWithOldData"
+            },
+            {
+                "id": "predictGraph_TailNewest20"
+            },
+            {
+                "id": "predictGraph_LoadModelInits"
+            },
+            {
+                "id": "predictGraph_CreateModel"
+            },
+            {
+                "id": "predictGraph_Normalize"
+            },
+            {
+                "id": "predictGraph_Predict"
+            },
+            {
+                "id": "predictGraph_StorageNode"
+            }
+        ],
+        "edges": [
+            {
+                "source": "predictGraph_QueryTrainData",
+                "target": "predictGraph_SubsetFeats",
+                "label": "data_fr | DataFrame | (1594, 12)",
+                "debug_file": "graph_data/predictGraph/QueryTrainData-0fb029c1-a585-4be1-bb5e-7750928156ec_data_fr.md"
+            },
+            {
+                "source": "predictGraph_QueryUnlabeledData",
+                "target": "predictGraph_SubFeatsNew",
+                "label": "data_fr | DataFrame | (5, 11)",
+                "debug_file": "graph_data/predictGraph/QueryUnlabeledData-36187a8b-753c-4f19-8cfe-d339df14e4ea_data_fr.md"
+            },
+            {
+                "source": "predictGraph_SubsetFeats",
+                "target": "predictGraph_DropLabel",
+                "label": "data_fr | DataFrame | (1594, 7)",
+                "debug_file": "graph_data/predictGraph/SubsetFeats-ac363923-06e2-40a5-a595-38b3ee931b78_data_fr.md"
+            },
+            {
+                "source": "predictGraph_DropLabel",
+                "target": "predictGraph_MergeWithOldData",
+                "label": "data_fr | DataFrame | (1594, 6)",
+                "debug_file": "graph_data/predictGraph/DropLabel-993acfd0-b287-438a-b63d-6582f7cf9c70_data_fr.md"
+            },
+            {
+                "source": "predictGraph_SubFeatsNew",
+                "target": "predictGraph_MergeWithOldData",
+                "label": "data_fr | DataFrame | (5, 6)",
+                "debug_file": "graph_data/predictGraph/SubFeatsNew-59aef7ec-c511-43c3-8668-7b6e5210eba8_data_fr.md"
+            },
+            {
+                "source": "predictGraph_MergeWithOldData",
+                "target": "predictGraph_TailNewest20",
+                "label": "data_fr | DataFrame | (1599, 6)",
+                "debug_file": "graph_data/predictGraph/MergeWithOldData-b5cff83b-1bec-48ee-a2f5-753f2ad4cff8_data_fr.md"
+            },
+            {
+                "source": "predictGraph_TailNewest20",
+                "target": "predictGraph_Normalize",
+                "label": "data_fr | DataFrame | (20, 6)",
+                "debug_file": "graph_data/predictGraph/TailNewest20-2c92a29b-7cc2-4366-b05d-4cb395c49bdc_data_fr.md"
+            },
+            {
+                "source": "predictGraph_LoadModelInits",
+                "target": "predictGraph_CreateModel",
+                "label": "train_df | DataFrame | (1594, 7)",
+                "debug_file": "graph_data/predictGraph/LoadModelInits-c24eca9f-285a-4f32-9d78-a13202a9952c_train_df.md"
+            },
+            {
+                "source": "predictGraph_LoadModelInits",
+                "target": "predictGraph_CreateModel",
+                "label": "normalizer | Normalizer | ",
+                "debug_file": "graph_data/predictGraph/LoadModelInits-c24eca9f-285a-4f32-9d78-a13202a9952c_normalizer.md"
+            },
+            {
+                "source": "predictGraph_LoadModelInits",
+                "target": "predictGraph_CreateModel",
+                "label": "hypers | dict",
+                "debug_file": "graph_data/predictGraph/LoadModelInits-c24eca9f-285a-4f32-9d78-a13202a9952c_hypers.md"
+            },
+            {
+                "source": "predictGraph_CreateModel",
+                "target": "predictGraph_Predict",
+                "label": "gp_model | GPModel ",
+                "debug_file": "graph_data/predictGraph/CreateModel-bf56bb73-904a-44c0-a0c7-3601fd2945c7_gp_model.md"
+            },
+            {
+                "source": "predictGraph_Normalize",
+                "target": "predictGraph_Predict",
+                "label": "data_fr | DataFrame | (20, 6)",
+                "debug_file": "graph_data/predictGraph/Normalize-d4daee94-f6c0-4847-abc6-a2bf3e5ee446_data_fr.md"
+            },
+            {
+                "source": "predictGraph_Predict",
+                "target": "predictGraph_StorageNode",
+                "label": "preds_arr | ndarray | ",
+                "debug_file": "graph_data/predictGraph/Predict-908da52b-4361-4bf3-bdcf-10ee986716f9_preds_arr.md"
+            }
+        ],
+        "sub_graphs": [
+            {
+                "name": "predictGraph",
+                "nodes_in_graph": [
+                    "predictGraph_QueryTrainData",
+                    "predictGraph_QueryUnlabeledData",
+                    "predictGraph_SubsetFeats",
+                    "predictGraph_DropLabel",
+                    "predictGraph_SubFeatsNew",
+                    "predictGraph_MergeWithOldData",
+                    "predictGraph_TailNewest20",
+                    "predictGraph_LoadModelInits",
+                    "predictGraph_CreateModel",
+                    "predictGraph_Normalize",
+                    "predictGraph_Predict",
+                    "predictGraph_StorageNode"
+                ],
+                "parent": ""
+            }
+        ]
+    }
+}
