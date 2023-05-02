@@ -1,8 +1,7 @@
 # graph-flow-vis (WIP)
 
 Web applicaton to visualize complex pipelines, made with [dagre-d3](https://github.com/dagrejs/dagre-d3).
-The core focus is to visualize [flowpipe](https://github.com/PaulSchweizer/flowpipe) graphs although we
-aspire to support more graph import formats in the future.
+The core focus is to visualize [flowpipe](https://github.com/PaulSchweizer/flowpipe) graphs.
 
 ![example graph](example_graph_vis1.png)
 
@@ -16,11 +15,13 @@ aspire to support more graph import formats in the future.
 
 install:
 ```
-pip install -r requirements.txt --upgrade
+virtualenv myenv
+source myenv/bin/activate
+pip install -r web_app/requirements.txt
 ```
 
 run:
-- `cd` to folder containing `app.py`, run:
+- `cd` to the `web_app` folder and run:
 ```
 FLASK_APP=app.py FLASK_ENV=development flask run --port 8889
 ```
